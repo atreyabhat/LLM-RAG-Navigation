@@ -64,7 +64,7 @@ sudo apt install
    ```bash
    sudo gedit waffle.yaml
    ```
-3) Replace the robot_model_type:"differential" under amcl ros__parameter with
+3) Replace the **robot_model_type: "differential" ** under amcl:ros__parameter with
    ```bash
     robot_model_type: "nav2_amcl::DifferentialMotionModel"
    ```

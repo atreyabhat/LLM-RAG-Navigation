@@ -8,11 +8,11 @@
 3) Place the world files in the /opt/ros/humble/share/turtlebot3_gazebo/worlds
 
 #### Open the Simulation on Gazebo
-'''bash
+```bash
 ros2 launch turtlebot3_gazebo turtlebot3_house.launch.py
-'''
+```
 
-'''bash
+```bash
 ros2 launch turtlebot3_gazebo turtlebot3_bookstore.launch.py
-'''
+```
 

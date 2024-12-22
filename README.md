@@ -43,11 +43,32 @@ ros2 run turtlebot3_teleop teleop_keyboard
 ```bash
 ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
 ```
-RViz should open up map geenration
+RViz should open up with map generation
 ##### Save the map (no extension needed to save the map)
 ```bash
 ros2 run nav2_map_server map_saver_cli -f map_folder/map_name
 ```
+
+#### Fixing DDS and Nav2 params
+##### Fix DDS
+```bash
+sudo apt install
+```
+
+##### Fix nav2 params
+1) Go to
+   ```bash
+   cd /opt/ros/humble/share/turtlebot3_navigation2/param
+   ```
+2) Open waffle.yaml as admin
+   ```bash
+   sudo gedit waffle.yaml
+   ```
+3) Replace the robot_model_type:"differential" under amcl ros__parameter with
+   ```bash
+    robot_model_type: "nav2_amcl::DifferentialMotionModel"
+   ```
+
 
 
 

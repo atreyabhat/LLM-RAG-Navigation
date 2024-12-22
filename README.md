@@ -46,7 +46,7 @@ ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
 RViz should open up with map generation
 ##### Save the map (no extension needed to save the map)
 ```bash
-ros2 run nav2_map_server map_saver_cli -f map_folder/map_name
+ros2 run nav2_map_server map_saver_cli -f <map_folder/map_name>
 ```
 
 #### Fixing DDS and Nav2 params
@@ -74,12 +74,16 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
    ```
 
 #### Navigating Turtlebot3
-1) Launch the navigation
+1) Launch the desired simulation with the saved Map
    ```bash
-   ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=map_folder/map_name.yaml
+   ros2 launch turtlebot3_gazebo <launch file.py>
    ```
-2) Provide 2D pose estimate in RViz (Approximate position and orientation)
-3) Provide Nav2 Goal to navigate the robot to goal
+2) Launch the navigation
+   ```bash
+   ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=<map_folder/map_name.yaml>
+   ```
+3) Provide 2D pose estimate in RViz (Approximate position and orientation)
+4) Provide Nav2 Goal to navigate the robot to goal
 
 
 

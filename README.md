@@ -52,7 +52,11 @@ ros2 run nav2_map_server map_saver_cli -f map_folder/map_name
 #### Fixing DDS and Nav2 params
 ##### Fix DDS
 ```bash
-sudo apt install
+sudo apt install ros-humble-rmw-cyclonedds-cpp
+```
+Add below line to .bashrc
+```bash
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 ```
 
 ##### Fix nav2 params
@@ -64,10 +68,18 @@ sudo apt install
    ```bash
    sudo gedit waffle.yaml
    ```
-3) Replace the **robot_model_type: "differential" ** under amcl:ros__parameter with
+3) Replace the robot_model_type: "differential" under amcl:ros__parameter with
    ```bash
     robot_model_type: "nav2_amcl::DifferentialMotionModel"
    ```
+
+#### Navigating Turtlebot3
+1) Launch the navigation
+   ```bash
+   ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=map_folder/map_name.yaml
+   ```
+2) Provide 2D pose estimate in RViz (Approximate position and orientation)
+3) Provide Nav2 Goal to navigate the robot to goal
 
 
 

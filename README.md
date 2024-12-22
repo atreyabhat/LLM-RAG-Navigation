@@ -5,7 +5,15 @@
 sudo apt install ros-humble-navigation2
 sudo apt install ros-humble-nav2-bringup
 ```
-
+#### Install Turtlebot3
+```bash
+sudo apt install ros-humble-turtlebot3*
+```
+Add key environment variable
+```bash
+gedit ~/.bashrc
+```
+Paste the below line in .bashrc
 ```bash
 export TURTLEBOT3_MODEL=waffle
 ```
@@ -24,4 +32,25 @@ ros2 launch turtlebot3_gazebo turtlebot3_house.launch.py
 ```bash
 ros2 launch turtlebot3_gazebo turtlebot3_bookstore.launch.py
 ```
+
+#### Moving the Turtlebot3
+```bash
+ros2 run turtlebot3_teleop teleop_keyboard
+```
+
+#### Generating Map
+##### Launch Cartographer
+```bash
+ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
+```
+RViz should open up map geenration
+##### Save the map (no extension needed to save the map)
+```bash
+ros2 run nav2_map_server map_saver_cli -f map_folder/map_name
+```
+
+
+
+
+
 

@@ -1,5 +1,14 @@
 # LLM-Navigation
 
+#### Install Nav2
+```bash
+sudo apt install ros-humble-navigation2
+sudo apt install ros-humble-nav2-bringup
+```
+
+```bash
+export TURTLEBOT3_MODEL=waffle
+```
 
 #### Setting up the Environment for TurtleBot3
 

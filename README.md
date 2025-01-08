@@ -85,6 +85,18 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 3) Provide 2D pose estimate in RViz (Approximate position and orientation)
 4) Provide Nav2 Goal to navigate the robot to goal
 
+#### Using LLM
+1) Launch simulation and navigation for the turtlebot3 as mentioned above.
+2) Launch the waypoint parser
+   ```bash
+   ros2 run waypoint_generator waypoint_parser
+   ```
+3) Launch the LLM interface
+   ```bash
+   ros2 run llm llm_publisher
+   ```
+   Follow the URL on the terminal which opens the web-based interface to provide user input to the robot.
+
 
 
 

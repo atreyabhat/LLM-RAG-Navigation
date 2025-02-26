@@ -1,6 +1,6 @@
 # LLM-Navigation
 
-![image](https://github.com/user-attachments/assets/c13f3ed2-ccef-4316-a906-eb07543e6987)
+<img src="https://github.com/user-attachments/assets/c13f3ed2-ccef-4316-a906-eb07543e6987" width="300"/>
 
 
 #### Install Nav2

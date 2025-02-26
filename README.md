@@ -1,45 +1,7 @@
 # LLM-Navigation
 
+![image](https://github.com/user-attachments/assets/c13f3ed2-ccef-4316-a906-eb07543e6987)
 
-
-flowchart TD
-    A[User Natural Language Query] --> B[LLM Initial Processing]
-    B -->|Query Analysis| C[RAG Database]
-    C -->|Context Enrichment| D[LLM Context-Aware Processing]
-    D -->|Navigation Commands| E[ROS2 Nav2]
-    E -->|Path Planning| F[TurtleBot Navigation]
-    F -->|Object Location| G[Object Retrieval]
-    
-    H[Environment Sensors] -->|New Data| I[Dynamic Database Update]
-    I --> C
-    
-    subgraph "LLM Processing"
-    B
-    D
-    end
-    
-    subgraph "Knowledge Base"
-    C
-    I
-    end
-    
-    subgraph "Robot Control"
-    E
-    F
-    G
-    end
-    
-    classDef llm fill:#f9d5e5,stroke:#333,stroke-width:1px;
-    classDef rag fill:#eeeeee,stroke:#333,stroke-width:1px;
-    classDef ros fill:#d5f9e8,stroke:#333,stroke-width:1px;
-    classDef robot fill:#e8f9d5,stroke:#333,stroke-width:1px;
-    classDef user fill:#d5e5f9,stroke:#333,stroke-width:1px;
-    
-    class A user;
-    class B,D llm;
-    class C,I rag;
-    class E ros;
-    class F,G,H robot;
 
 #### Install Nav2
 ```bash
